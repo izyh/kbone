@@ -69,7 +69,7 @@ Component({
         checkComponentAttr(this.compConfig, this.domNode.behavior, this.domNode, data)
 
         // 执行一次 setData
-        if (Object.keys(data).length) this.setData(data)
+        if (Object.keys(data).length) this.setData({data})
 
         // 记录该 domNode 节点对应的自定义组件实例
         this.domNode._wxCustomComponent = this.selectComponent(`.node-${this.domNode.$$nodeId}`)
@@ -92,7 +92,7 @@ Component({
 
             checkComponentAttr(this.compConfig, this.domNode.behavior, this.domNode, newData, this.data)
 
-            this.setData(newData)
+            this.setData({data: newData})
 
             // 更新该 domNode 节点对应的自定义组件实例
             this.domNode._wxCustomComponent = this.selectComponent(`.node-${this.domNode.$$nodeId}`)
